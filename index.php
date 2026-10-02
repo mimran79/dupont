@@ -32,6 +32,7 @@ $postController = new PostController();
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $route = str_replace('/dupont', '', $path);
+$route = $path;
 $route = str_replace('.php', '', $route);
 
 // Protect all admin routes: redirect to home page if not an admin
@@ -258,6 +259,6 @@ else if ($route === '/admin/news') {
 // Another page which does not exist
 
 else {
-    header('Location:/dupont/');
+    header('Location:/');
     exit;
 }
